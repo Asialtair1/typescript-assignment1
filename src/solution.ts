@@ -1,19 +1,14 @@
 // TODO: REMOVE THE COMMENT
 // * problem 1:
-const formatValue = (value: string | number | boolean) => {
+const formatValue = (value: string | number | boolean): string | number | boolean => {
     if (typeof value === "string") {
         const uppercase = value.toUpperCase();
         return uppercase
     } else if (typeof value === "number") {
         const multiple = value * 10;
         return multiple;
-    } else if (typeof value === "boolean") {
-        if (value) {
-            return false;
-        } else {
-            return true;
-        }
     }
+    return !value;
 };
 
 
@@ -54,3 +49,15 @@ const filterByRating = (items: Item[]): Item[] => {
     return filteredItem;
 };
 
+// problem no 5:
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean
+};
+
+const filterActiveUsers = (users: User[]): User[] => {
+    const activeUser = users.filter(user => user.isActive === true);
+    return activeUser;
+};
