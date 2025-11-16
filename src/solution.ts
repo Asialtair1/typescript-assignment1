@@ -18,3 +18,12 @@ const formatValue = (value: string | number | boolean) => {
 
 
 // problem 2:
+const getLength  = (value : string | any[]): number => {
+    if (typeof value === "string"){
+        const length = value.length;
+        return length;
+    }else if(Array.isArray(value)){
+        return value.length;
+    }
+    return 0
+}
